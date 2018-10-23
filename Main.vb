@@ -102,15 +102,20 @@ Public Class Main
 
         'Boot mode (Auto, select or force)
         Config = Config & FormatLine(BootMode, BootModeValue, False)
-
+        
+        'Bugfix: File generated does not work with PearPC running on modern systems
+        'Bugfix description: If the bootmethod is force, these lines are included
+        'otherwise, they're not included.
+        If BootModeValue = "force" Then
+            
         'PROM file (File to load in case BootMethod = Force)
         Config = Config & FormatLine(PROMFile, PROMFileValue, False)
-
         'PROM Booth Path (Directory where PROM/PearPC boots)(Used with PROMFile)
         Config = Config & FormatLine(PROMBootPath, PROMBootPathValue, False)
-
         'Boot Arguments
         Config = Config & FormatLine(BootArgs, BootArgsValue, False)
+            
+        End If
 
         'Mach Arguments
         Config = Config & FormatLine(MachArgs, MachArgsValue, False)
