@@ -646,4 +646,8 @@ EndFunction:
             BootArgumentsLabel.Enabled = False
         End If
     End Sub
+    
+    Private Sub MasterDriveType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MasterDriveType.SelectedIndexChanged
+        MasterDriveTypeBasic.Text = MasterDriveType.SelectedItem.ToString
+    End Sub
 End Class
