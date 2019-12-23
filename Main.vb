@@ -8,174 +8,50 @@ Public Class Main
             GoTo EndEvent
         End If
 
-        'Options contained in variables for posterior use
-        Dim Resolution As String = "ppc_start_resolution = "
-        Dim FullScreen As String = "ppc_start_full_screen = "
-        Dim RedrawTime As String = "redraw_interval_msec = "
-        Dim ComposeDialogKey As String = "key_compose_dialog = "
-        Dim ChangeCDKey As String = "key_change_cd_0 = "
-        Dim ReleaseMouse As String = "key_toggle_mouse_grab = "
-        Dim SwitchFullScreen As String = "key_toggle_full_screen = "
-        Dim BootMode As String = "prom_bootmethod = "
-        Dim PROMFile As String = "prom_loadfile = "
-        Dim PROMBootPath As String = "prom_env_bootpath = "
-        Dim BootArgs As String = "prom_env_bootargs = "
-        Dim MachArgs As String = "prom_env_machargs = "
-        Dim GraphicDriver As String = "prom_driver_graphic = "
-        Dim PageTable As String = "page_table_pa = "
-        Dim CPUPvr As String = "cpu_pvr = "
-        Dim Memory As String = "memory_size = "
-        Dim MasterInstalled As String = "pci_ide0_master_installed = "
-        Dim MasterImage As String = "pci_ide0_master_image = "
-        Dim MasterType As String = "pci_ide0_master_type = "
-        Dim SlaveInstalled As String = "pci_ide0_slave_installed = "
-        Dim SlaveImage As String = "pci_ide0_slave_image = "
-        Dim SlaveType As String = "pci_ide0_slave_type = "
-        Dim Net3c90xInstalled As String = "pci_3c90x_installed = "
-        Dim Net3c90xMac As String = "pci_3c90x_mac = "
-        Dim NetRTL8139Installed As String = "pci_rtl8139_installed = "
-        Dim NetRTL8139Mac As String = "pci_rtl8139_mac = "
-        Dim USBInstalled As String = "pci_usb_installed = "
-        Dim SerialInstalled As String = "pci_serial_installed = "
-        Dim NVRAMFile As String = "nvram_file = "
-
-        'Variables that contain the values of the options
-        Dim ResolutionValue As String = DataArray(0)
-        Dim FullScreenValue As Long = DataArray(1)
-        Dim RedrawTimeValue As Long = DataArray(2)
-        Dim ComposeDialogKeyValue As String = DataArray(3)
-        Dim ChangeCDKeyValue As String = DataArray(4)
-        Dim ReleaseMouseValue As String = DataArray(5)
-        Dim SwitchFullScreenValue As String = DataArray(6)
-        Dim BootModeValue As String = DataArray(7)
-        Dim PROMFileValue As String = DataArray(8)
-        Dim PROMBootPathValue As String = DataArray(9)
-        Dim BootArgsValue As String = DataArray(10)
-        Dim MachArgsValue As String = DataArray(11)
-        Dim GraphicDriverValue As String = DataArray(12)
-        Dim PageTableValue As String = DataArray(13)
-        Dim CPUPvrValue As String = DataArray(14)
-        Dim MemoryValue As String = DataArray(15)
-        Dim MasterInstalledValue As Long = DataArray(16)
-        Dim MasterImageValue As String = DataArray(17)
-        Dim MasterTypeValue As String = DataArray(18)
-        Dim SlaveInstalledValue As Long = DataArray(19)
-        Dim SlaveImageValue As String = DataArray(20)
-        Dim SlaveTypeValue As String = DataArray(21)
-        Dim Net3c90xInstalledValue As Long = DataArray(22)
-        Dim Net3c90xMacValue As String = DataArray(23)
-        Dim NetRTL8139InstalledValue As Long = DataArray(24)
-        Dim NetRTL8139MacValue As String = DataArray(25)
-        Dim USBInstalledValue As Long = DataArray(26)
-        Dim SerialInstalledValue As Long = DataArray(27)
-        Dim NVRAMFileValue As String = DataArray(28)
-
-        'Here is where the texfile is saved to
-        'the TextBox and finally saved to a file
-
-        'Variable for saving all the text without needing a TextBox
+        'Variable for saving all the text
         Dim Config As String = ""
 
-        'Formatting the text with a function, which returns
-        'the text formatted as the documentation says
+        'Formatting the text with FormatLine function, pretty straightforward
 
-        'Emulator Resolution
-        Config = FormatLine(Resolution, ResolutionValue, False)
-
-        'Full screen (Enabled or disabled)
-        Config = Config & FormatLine(FullScreen, FullScreenValue, True)
-
-        'Image redraw time
-        Config = Config & FormatLine(RedrawTime, RedrawTimeValue, True)
-
-        'Compose dialog key
-        Config = Config & FormatLine(ComposeDialogKey, ComposeDialogKeyValue, False)
-
-        'Change CD Key
-        Config = Config & FormatLine(ChangeCDKey, ChangeCDKeyValue, False)
-
-        'Release/Capture mouse key
-        Config = Config & FormatLine(ReleaseMouse, ReleaseMouseValue, False)
-
-        'Toggle Fullscreen/Windowed modes key
-        Config = Config & FormatLine(SwitchFullScreen, SwitchFullScreenValue, False)
-
-        'Boot mode (Auto, select or force)
-        Config = Config & FormatLine(BootMode, BootModeValue, False)
+        Config = FormatLine("ppc_start_resolution = ", DataArray(0), False)
+        Config = Config & FormatLine("ppc_start_full_screen = ", DataArray(1), True)
+        Config = Config & FormatLine("redraw_interval_msec = ", DataArray(2), True)
+        Config = Config & FormatLine("key_compose_dialog = ", DataArray(3), False)
+        Config = Config & FormatLine("key_change_cd_0 = ", DataArray(4), False)
+        Config = Config & FormatLine("key_toggle_mouse_grab = ", DataArray(5), False)
+        Config = Config & FormatLine("key_toggle_full_screen = ", DataArray(6), False)
+        Config = Config & FormatLine("prom_bootmethod = ", DataArray(7), False)
         
-        'Bugfix: File generated does not work with PearPC running on modern systems
-        'Bugfix description: If the bootmethod is force, these lines are included
+        'If the bootmethod is force, these lines are included
         'otherwise, they're not included.
-        If BootModeValue = "force" Then
-            
-        'PROM file (File to load in case BootMethod = Force)
-        Config = Config & FormatLine(PROMFile, PROMFileValue, False)
-        'PROM Booth Path (Directory where PROM/PearPC boots)(Used with PROMFile)
-        Config = Config & FormatLine(PROMBootPath, PROMBootPathValue, False)
-        'Boot Arguments
-        Config = Config & FormatLine(BootArgs, BootArgsValue, False)
-            
+        If DataArray(7) = "force" Then
+            Config = Config & FormatLine("prom_loadfile = ", DataArray(8), False)
+            Config = Config & FormatLine("prom_env_bootpath = ", DataArray(9), False)
+            Config = Config & FormatLine("prom_env_bootargs = ", DataArray(10), False)
         End If
 
-        'Mach Arguments
-        Config = Config & FormatLine(MachArgs, MachArgsValue, False)
+        Config = Config & FormatLine("prom_env_machargs = ", DataArray(11), False)
+        Config = Config & FormatLine("prom_driver_graphic = ", DataArray(12), False)
+        Config = Config & FormatLine("page_table_pa = ", DataArray(13), True)
+        Config = Config & FormatLine("cpu_pvr = ", DataArray(14), True)
+        Config = Config & FormatLine("memory_size = ", DataArray(15), True)
+        Config = Config & FormatLine("pci_ide0_master_installed = ", DataArray(16), True)
+        Config = Config & FormatLine("pci_ide0_master_image = ", DataArray(17), False)
+        Config = Config & FormatLine("pci_ide0_master_type = ", DataArray(18), False)
+        Config = Config & FormatLine("pci_ide0_slave_installed = ", DataArray(19), True)
+        Config = Config & FormatLine("pci_ide0_slave_image = ", DataArray(20), False)
+        Config = Config & FormatLine("pci_ide0_slave_type = ", DataArray(21), False)
+        Config = Config & FormatLine("pci_3c90x_installed = ", DataArray(22), True)
+        Config = Config & FormatLine("pci_3c90x_mac = ", DataArray(23), False)
+        Config = Config & FormatLine("pci_rtl8139_installed = ", DataArray(24), True)
+        Config = Config & FormatLine("pci_rtl8139_mac = ", DataArray(25), False)
+        Config = Config & FormatLine("pci_usb_installed = ", DataArray(26), True)
+        Config = Config & FormatLine("pci_serial_installed = ", DataArray(27), True)
+        Config = Config & FormatLine("nvram_file = ", DataArray(28), False)
 
-        'Graphic driver (video.x is recommended OS X)
-        Config = Config & FormatLine(GraphicDriver, GraphicDriverValue, False)
-
-        'Initial page table(Don't change)
-        Config = Config & FormatLine(PageTable, PageTableValue, True)
-
-        'Processor Version Register (To emulate G3 or G4)
-        Config = Config & FormatLine(CPUPvr, CPUPvrValue, True)
-
-        'Memory size (must be >= 64 MiB)
-        Config = Config & FormatLine(Memory, MemoryValue, True)
-
-        'Master drive Installed (Yes or No , 1 or 0)
-        Config = Config & FormatLine(MasterInstalled, MasterInstalledValue, True)
-
-        'Route to the Master drive image
-        Config = Config & FormatLine(MasterImage, MasterImageValue, False)
-
-        'Master Drive Type(Hard disk or CD-ROM)
-        Config = Config & FormatLine(MasterType, MasterTypeValue, False)
-
-        'Slave drive Installed (Yes or No , 1 or 0)
-        Config = Config & FormatLine(SlaveInstalled, SlaveInstalledValue, True)
-
-        'Route to the Slave drive image
-        Config = Config & FormatLine(SlaveImage, SlaveImageValue, False)
-
-        'Slave Drive Type(Hard disk or CD-ROM)
-        Config = Config & FormatLine(SlaveType, SlaveTypeValue, False)
-
-        'Network card 3c90x Installed (Yes or No)
-        Config = Config & FormatLine(Net3c90xInstalled, Net3c90xInstalledValue, True)
-
-        'MAC of this card (3c90x)
-        Config = Config & FormatLine(Net3c90xMac, Net3c90xMacValue, False)
-
-        'Network card RTL8139 installed (Yes or No)
-        Config = Config & FormatLine(NetRTL8139Installed, NetRTL8139InstalledValue, True)
-
-        'MAC of this card (RTL8139)
-        Config = Config & FormatLine(NetRTL8139Mac, NetRTL8139MacValue, False)
-
-        'PCI USB capability installed (Yes or No)
-        Config = Config & FormatLine(USBInstalled, USBInstalledValue, True)
-
-        'PCI Serial port installed installed (Yes or No)(For debugging only)
-        Config = Config & FormatLine(SerialInstalled, SerialInstalledValue, True)
-
-        'NVRAM file route
-        Config = Config & FormatLine(NVRAMFile, NVRAMFileValue, False)
-
-
-        'For debug purposes: Shows an MsgBox of what's in the Config variable
         Dim Proceed As Integer
         Proceed = MsgBox(Config, MsgBoxStyle.YesNo)
-        If Proceed = 7 Then Exit Sub
+        If Proceed = MsgBoxResult.No Then Exit Sub
 
         'Show the Save dialog for choosing the config file route
         SaveConfigFile.ShowDialog()
@@ -570,6 +446,17 @@ EndFunction:
     End Sub
 
     Private Sub Mac_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Mac13c90.KeyPress, Mac68139.KeyPress, Mac63c90.KeyPress, Mac58139.KeyPress, Mac53c90.KeyPress, Mac48139.KeyPress, Mac43c90.KeyPress, Mac38139.KeyPress, Mac33c90.KeyPress, Mac28139.KeyPress, Mac23c90.KeyPress, Mac18139.KeyPress
+        If e.KeyChar <> vbBack Then
+            Dim Chars = e.KeyChar.ToString
+            Dim allowed As String = ("1234567890ABCDEF")
+            For Each c As Char In Chars
+                If allowed.Contains(c) = False Then
+                    My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Beep)
+                    e.Handled = True
+                End If
+            Next
+        End If
+
         If Not Char.IsLetterOrDigit(e.KeyChar) And e.KeyChar <> vbBack Then
             e.Handled = True
         End If

@@ -23,93 +23,93 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
-        Me.CreateConfig = New System.Windows.Forms.Button
-        Me.SaveConfigFile = New System.Windows.Forms.SaveFileDialog
-        Me.StandardResolution = New System.Windows.Forms.ComboBox
-        Me.BitDepth = New System.Windows.Forms.ComboBox
-        Me.WelcomeText = New System.Windows.Forms.Label
-        Me.Resolution = New System.Windows.Forms.Label
-        Me.CustomResolutionCheck = New System.Windows.Forms.CheckBox
-        Me.FullscreenCheck = New System.Windows.Forms.CheckBox
-        Me.Fullscreen = New System.Windows.Forms.Label
-        Me.XCustomResolution = New System.Windows.Forms.TextBox
-        Me.YCustomResolution = New System.Windows.Forms.TextBox
-        Me.Browser = New System.Windows.Forms.OpenFileDialog
-        Me.ToggleFullscreenKeyLabel = New System.Windows.Forms.Label
-        Me.ToggleFullscreenKey = New System.Windows.Forms.TextBox
-        Me.ShowAdvanced = New System.Windows.Forms.CheckBox
-        Me.Redraw = New System.Windows.Forms.Label
-        Me.RedrawTime = New System.Windows.Forms.TextBox
-        Me.GraphicSettings = New System.Windows.Forms.GroupBox
-        Me.BrowseDriver = New System.Windows.Forms.Button
-        Me.GraphicDriver = New System.Windows.Forms.TextBox
-        Me.GraphicDriverLabel = New System.Windows.Forms.Label
-        Me.Frequency = New System.Windows.Forms.NumericUpDown
-        Me.DisksSettings = New System.Windows.Forms.GroupBox
-        Me.SlaveBrowseDrive = New System.Windows.Forms.Button
-        Me.SlaveTypeLabel = New System.Windows.Forms.Label
-        Me.SlaveImageLabel = New System.Windows.Forms.Label
-        Me.SlaveDrive = New System.Windows.Forms.TextBox
-        Me.SlaveEnabled = New System.Windows.Forms.CheckBox
-        Me.SlaveDriveType = New System.Windows.Forms.ComboBox
-        Me.MasterDriveTypeBasic = New System.Windows.Forms.Label
-        Me.MasterBrowseDrive = New System.Windows.Forms.Button
-        Me.MasterTypeLabel = New System.Windows.Forms.Label
-        Me.MasterImageLabel = New System.Windows.Forms.Label
-        Me.MasterDrive = New System.Windows.Forms.TextBox
-        Me.MasterEnabled = New System.Windows.Forms.CheckBox
-        Me.MasterDriveType = New System.Windows.Forms.ComboBox
-        Me.SelectDrive = New System.Windows.Forms.FolderBrowserDialog
-        Me.NetworkSettings = New System.Windows.Forms.GroupBox
-        Me.Net8139MacLabel = New System.Windows.Forms.Label
-        Me.Net3c90MacLabel = New System.Windows.Forms.Label
-        Me.Mac68139 = New System.Windows.Forms.TextBox
-        Me.Mac58139 = New System.Windows.Forms.TextBox
-        Me.Mac48139 = New System.Windows.Forms.TextBox
-        Me.Mac38139 = New System.Windows.Forms.TextBox
-        Me.Mac28139 = New System.Windows.Forms.TextBox
-        Me.Mac18139 = New System.Windows.Forms.TextBox
-        Me.Mac63c90 = New System.Windows.Forms.TextBox
-        Me.Mac53c90 = New System.Windows.Forms.TextBox
-        Me.Mac43c90 = New System.Windows.Forms.TextBox
-        Me.Mac33c90 = New System.Windows.Forms.TextBox
-        Me.Mac23c90 = New System.Windows.Forms.TextBox
-        Me.Mac13c90 = New System.Windows.Forms.TextBox
-        Me.NetRTL8139 = New System.Windows.Forms.CheckBox
-        Me.Net3c90x = New System.Windows.Forms.CheckBox
-        Me.MiscellaneousSettings = New System.Windows.Forms.GroupBox
-        Me.EnableSerialPort = New System.Windows.Forms.CheckBox
-        Me.ComposeDialogKeyLabel = New System.Windows.Forms.Label
-        Me.ComposeDialogKey = New System.Windows.Forms.TextBox
-        Me.ChangeCDKeyLabel = New System.Windows.Forms.Label
-        Me.ChangeCDKey = New System.Windows.Forms.TextBox
-        Me.MouseGrabKeyLabel = New System.Windows.Forms.Label
-        Me.EnableUSB = New System.Windows.Forms.CheckBox
-        Me.MouseToggleKey = New System.Windows.Forms.TextBox
-        Me.MB = New System.Windows.Forms.Label
-        Me.RAM = New System.Windows.Forms.TextBox
-        Me.ProcessorLabel = New System.Windows.Forms.Label
-        Me.RAMLabel = New System.Windows.Forms.Label
-        Me.PPCG4 = New System.Windows.Forms.RadioButton
-        Me.PPCG3 = New System.Windows.Forms.RadioButton
-        Me.AdvancedSettings = New System.Windows.Forms.GroupBox
-        Me.AdvancedWarning = New System.Windows.Forms.Label
-        Me.PageTable = New System.Windows.Forms.TextBox
-        Me.PageTableLabel = New System.Windows.Forms.Label
-        Me.NVRAMFile = New System.Windows.Forms.TextBox
-        Me.NVRAMFileLabel = New System.Windows.Forms.Label
-        Me.BootMode = New System.Windows.Forms.Label
-        Me.BootAuto = New System.Windows.Forms.RadioButton
-        Me.BootSelect = New System.Windows.Forms.RadioButton
-        Me.BootForce = New System.Windows.Forms.RadioButton
-        Me.MachArguments = New System.Windows.Forms.TextBox
-        Me.BootArguments = New System.Windows.Forms.TextBox
-        Me.MachArgumentsLabel = New System.Windows.Forms.Label
-        Me.BootArgumentsLabel = New System.Windows.Forms.Label
-        Me.PROMBootPath = New System.Windows.Forms.TextBox
-        Me.PROMFile = New System.Windows.Forms.TextBox
-        Me.PROMBootPathLabel = New System.Windows.Forms.Label
-        Me.PROMFileLabel = New System.Windows.Forms.Label
+        Me.CreateConfig = New System.Windows.Forms.Button()
+        Me.SaveConfigFile = New System.Windows.Forms.SaveFileDialog()
+        Me.StandardResolution = New System.Windows.Forms.ComboBox()
+        Me.BitDepth = New System.Windows.Forms.ComboBox()
+        Me.WelcomeText = New System.Windows.Forms.Label()
+        Me.Resolution = New System.Windows.Forms.Label()
+        Me.CustomResolutionCheck = New System.Windows.Forms.CheckBox()
+        Me.FullscreenCheck = New System.Windows.Forms.CheckBox()
+        Me.Fullscreen = New System.Windows.Forms.Label()
+        Me.XCustomResolution = New System.Windows.Forms.TextBox()
+        Me.YCustomResolution = New System.Windows.Forms.TextBox()
+        Me.Browser = New System.Windows.Forms.OpenFileDialog()
+        Me.ToggleFullscreenKeyLabel = New System.Windows.Forms.Label()
+        Me.ToggleFullscreenKey = New System.Windows.Forms.TextBox()
+        Me.ShowAdvanced = New System.Windows.Forms.CheckBox()
+        Me.Redraw = New System.Windows.Forms.Label()
+        Me.RedrawTime = New System.Windows.Forms.TextBox()
+        Me.GraphicSettings = New System.Windows.Forms.GroupBox()
+        Me.BrowseDriver = New System.Windows.Forms.Button()
+        Me.GraphicDriver = New System.Windows.Forms.TextBox()
+        Me.GraphicDriverLabel = New System.Windows.Forms.Label()
+        Me.Frequency = New System.Windows.Forms.NumericUpDown()
+        Me.DisksSettings = New System.Windows.Forms.GroupBox()
+        Me.SlaveBrowseDrive = New System.Windows.Forms.Button()
+        Me.SlaveTypeLabel = New System.Windows.Forms.Label()
+        Me.SlaveImageLabel = New System.Windows.Forms.Label()
+        Me.SlaveDrive = New System.Windows.Forms.TextBox()
+        Me.SlaveEnabled = New System.Windows.Forms.CheckBox()
+        Me.SlaveDriveType = New System.Windows.Forms.ComboBox()
+        Me.MasterDriveTypeBasic = New System.Windows.Forms.Label()
+        Me.MasterBrowseDrive = New System.Windows.Forms.Button()
+        Me.MasterTypeLabel = New System.Windows.Forms.Label()
+        Me.MasterImageLabel = New System.Windows.Forms.Label()
+        Me.MasterDrive = New System.Windows.Forms.TextBox()
+        Me.MasterEnabled = New System.Windows.Forms.CheckBox()
+        Me.MasterDriveType = New System.Windows.Forms.ComboBox()
+        Me.SelectDrive = New System.Windows.Forms.FolderBrowserDialog()
+        Me.NetworkSettings = New System.Windows.Forms.GroupBox()
+        Me.Net8139MacLabel = New System.Windows.Forms.Label()
+        Me.Net3c90MacLabel = New System.Windows.Forms.Label()
+        Me.Mac68139 = New System.Windows.Forms.TextBox()
+        Me.Mac58139 = New System.Windows.Forms.TextBox()
+        Me.Mac48139 = New System.Windows.Forms.TextBox()
+        Me.Mac38139 = New System.Windows.Forms.TextBox()
+        Me.Mac28139 = New System.Windows.Forms.TextBox()
+        Me.Mac18139 = New System.Windows.Forms.TextBox()
+        Me.Mac63c90 = New System.Windows.Forms.TextBox()
+        Me.Mac53c90 = New System.Windows.Forms.TextBox()
+        Me.Mac43c90 = New System.Windows.Forms.TextBox()
+        Me.Mac33c90 = New System.Windows.Forms.TextBox()
+        Me.Mac23c90 = New System.Windows.Forms.TextBox()
+        Me.Mac13c90 = New System.Windows.Forms.TextBox()
+        Me.NetRTL8139 = New System.Windows.Forms.CheckBox()
+        Me.Net3c90x = New System.Windows.Forms.CheckBox()
+        Me.MiscellaneousSettings = New System.Windows.Forms.GroupBox()
+        Me.EnableSerialPort = New System.Windows.Forms.CheckBox()
+        Me.ComposeDialogKeyLabel = New System.Windows.Forms.Label()
+        Me.ComposeDialogKey = New System.Windows.Forms.TextBox()
+        Me.ChangeCDKeyLabel = New System.Windows.Forms.Label()
+        Me.ChangeCDKey = New System.Windows.Forms.TextBox()
+        Me.MouseGrabKeyLabel = New System.Windows.Forms.Label()
+        Me.EnableUSB = New System.Windows.Forms.CheckBox()
+        Me.MouseToggleKey = New System.Windows.Forms.TextBox()
+        Me.MB = New System.Windows.Forms.Label()
+        Me.RAM = New System.Windows.Forms.TextBox()
+        Me.ProcessorLabel = New System.Windows.Forms.Label()
+        Me.RAMLabel = New System.Windows.Forms.Label()
+        Me.PPCG4 = New System.Windows.Forms.RadioButton()
+        Me.PPCG3 = New System.Windows.Forms.RadioButton()
+        Me.AdvancedSettings = New System.Windows.Forms.GroupBox()
+        Me.AdvancedWarning = New System.Windows.Forms.Label()
+        Me.PageTable = New System.Windows.Forms.TextBox()
+        Me.PageTableLabel = New System.Windows.Forms.Label()
+        Me.NVRAMFile = New System.Windows.Forms.TextBox()
+        Me.NVRAMFileLabel = New System.Windows.Forms.Label()
+        Me.BootMode = New System.Windows.Forms.Label()
+        Me.BootAuto = New System.Windows.Forms.RadioButton()
+        Me.BootSelect = New System.Windows.Forms.RadioButton()
+        Me.BootForce = New System.Windows.Forms.RadioButton()
+        Me.MachArguments = New System.Windows.Forms.TextBox()
+        Me.BootArguments = New System.Windows.Forms.TextBox()
+        Me.MachArgumentsLabel = New System.Windows.Forms.Label()
+        Me.BootArgumentsLabel = New System.Windows.Forms.Label()
+        Me.PROMBootPath = New System.Windows.Forms.TextBox()
+        Me.PROMFile = New System.Windows.Forms.TextBox()
+        Me.PROMBootPathLabel = New System.Windows.Forms.Label()
+        Me.PROMFileLabel = New System.Windows.Forms.Label()
         Me.GraphicSettings.SuspendLayout()
         CType(Me.Frequency, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DisksSettings.SuspendLayout()
@@ -633,7 +633,7 @@ Partial Class Main
         Me.Mac68139.Name = "Mac68139"
         Me.Mac68139.Size = New System.Drawing.Size(27, 21)
         Me.Mac68139.TabIndex = 13
-        Me.Mac68139.Text = "01"
+        Me.Mac68139.Text = "00"
         '
         'Mac58139
         '
@@ -646,7 +646,7 @@ Partial Class Main
         Me.Mac58139.Name = "Mac58139"
         Me.Mac58139.Size = New System.Drawing.Size(27, 21)
         Me.Mac58139.TabIndex = 12
-        Me.Mac58139.Text = "25"
+        Me.Mac58139.Text = "10"
         '
         'Mac48139
         '
@@ -659,7 +659,7 @@ Partial Class Main
         Me.Mac48139.Name = "Mac48139"
         Me.Mac48139.Size = New System.Drawing.Size(27, 21)
         Me.Mac48139.TabIndex = 11
-        Me.Mac48139.Text = "58"
+        Me.Mac48139.Text = "21"
         '
         'Mac38139
         '
@@ -672,7 +672,7 @@ Partial Class Main
         Me.Mac38139.Name = "Mac38139"
         Me.Mac38139.Size = New System.Drawing.Size(27, 21)
         Me.Mac38139.TabIndex = 10
-        Me.Mac38139.Text = "PC"
+        Me.Mac38139.Text = "D0"
         '
         'Mac28139
         '
@@ -685,7 +685,7 @@ Partial Class Main
         Me.Mac28139.Name = "Mac28139"
         Me.Mac28139.Size = New System.Drawing.Size(27, 21)
         Me.Mac28139.TabIndex = 9
-        Me.Mac28139.Text = "AR"
+        Me.Mac28139.Text = "2A"
         '
         'Mac18139
         '
@@ -698,7 +698,7 @@ Partial Class Main
         Me.Mac18139.Name = "Mac18139"
         Me.Mac18139.Size = New System.Drawing.Size(27, 21)
         Me.Mac18139.TabIndex = 8
-        Me.Mac18139.Text = "PE"
+        Me.Mac18139.Text = "C4"
         '
         'Mac63c90
         '
@@ -979,10 +979,10 @@ Partial Class Main
         Me.PPCG3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.PPCG3.Location = New System.Drawing.Point(5, 31)
         Me.PPCG3.Name = "PPCG3"
-        Me.PPCG3.Size = New System.Drawing.Size(165, 17)
+        Me.PPCG3.Size = New System.Drawing.Size(151, 17)
         Me.PPCG3.TabIndex = 1
         Me.PPCG3.TabStop = True
-        Me.PPCG3.Text = "PowerPC G3 (Recommended)"
+        Me.PPCG3.Text = "PowerPC G3 (more stable)"
         Me.PPCG3.UseVisualStyleBackColor = True
         '
         'AdvancedSettings
